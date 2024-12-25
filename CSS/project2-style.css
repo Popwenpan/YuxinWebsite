@@ -1,0 +1,248 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    margin-top: 3%;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background-image: linear-gradient(125deg,#988fb9,#ca7a7a,#4e6b9a,#1e144c);  background-size: 400%;
+    animation: bganimation 5s infinite;
+  }
+   
+
+   
+  @keyframes bganimation {
+    0%{
+      background-position: 0% 50%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0% 50%;
+    }
+  }
+
+input{
+    display: none;
+}
+
+.container{
+    width: 100%;
+    text-align: center;
+}
+
+h1{
+    font-weight: normal;
+    font-size: 35px;
+    position: relative;
+    margin: 40px 0;
+    color: rgb(255, 255, 255);
+}
+
+h1::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 6px;
+    background-color: blue;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate{
+    0%{width: 100px;}
+    50%{width: 500px;}
+    100%{width: 100px;}
+}
+
+.top-content{
+    background-color: rgb(214, 214, 214);
+    width: 90%;
+    margin: 0 auto 20px auto; 
+    height:60px;
+    display: flex;
+    align-items: center;
+    border-radius:5px ;
+    box-shadow: 3px 3px 5px lightgrey;
+}
+
+h3{
+    height:100%;
+    background-color: rgb(195, 195, 195);
+    line-height: 60px;
+    padding: 0 50px;
+    color: white;
+}
+
+h4{font-size: 15px;
+    padding: 0 50px;
+    color: rgb(222, 190, 190);
+}
+
+label{
+    display: inline-block;
+    height: 100%;
+    padding: 0 5px;
+    margin: 0 30px;
+    line-height: 60px;
+    font-size: 18px;
+    color: gray;
+    cursor: pointer;
+    transition: color .5s;
+}
+
+label:hover{
+    color: rgb(200, 9, 9);
+    font-weight: bold;
+}
+
+.sketch-gallery{
+    width:90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.sketch{
+    position:relative; 
+    height:530px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(125, 125, 125, 0.466);
+    cursor: pointer;
+    transition: .5s;
+}
+
+.sketch img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.sketch::before{
+    
+    position: absolute;
+    top:50%;
+    transform: translate(0.5%, -50%);
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: -180px;
+    opacity: 0;
+    transition: .3s;
+    transition-delay: .2s;
+    z-index: 1;
+    
+}
+
+.sketch:after{
+    
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: .3s;
+}
+
+.sketch:hover{
+    width: 101%;
+    height: 101%;
+}
+
+
+#check1:checked ~ .container .sketch-gallery .sketch{
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+    transition: .5s;
+
+}
+
+#check2:checked ~ .container .sketch-gallery .static{
+    transform:scale(1) ;
+    opacity: 1;
+    position: relative;
+}
+#check2:checked ~ .container .sketch-gallery .dynamic,
+#check2:checked ~ .container .sketch-gallery .interactive{
+    opacity: 0;
+    transform:scale(0) ;
+    position: absolute;
+    transition: 0s;
+}
+
+#check3:checked ~ .container .sketch-gallery .dynamic{
+    transform:scale(1) ;
+    opacity: 1;
+    position: relative;
+}
+#check3:checked ~ .container .sketch-gallery .static,
+#check3:checked ~ .container .sketch-gallery .interactive{
+    opacity: 0;
+    transform:scale(0) ;
+    position: absolute;
+    transition: 0s;
+}
+
+#check4:checked ~ .container .sketch-gallery .interactive{
+    transform:scale(1) ;
+    opacity: 1;
+    position: relative;
+}
+#check4:checked ~ .container .sketch-gallery .static,
+#check4:checked ~ .container .sketch-gallery .dynamic{
+    opacity: 0;
+    transform:scale(0) ;
+    position: absolute;
+    transition: 0s;
+}
+
+
+.homebutton {margin: 48%;
+    font-size:30px;
+    text-decoration: underline;
+}
+
+.homebutton:visited{
+    color:rgb(214, 213, 214);
+}
+
+.homebutton:hover{
+    color:rgb(209, 23, 23);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.Des{
+    color: rgb(237, 235, 235);
+    text-shadow: 17 14 14 rgb(0, 0, 0);
+}
+
+
+.homebutton-1 {margin-left: 50%;
+    font-size:20px;
+    text-decoration: underline;
+}
+
+.homebutton-1:visited{
+    color:rgb(214, 213, 214);
+}
+
+.homebutton-1:hover{
+    color:rgb(209, 23, 23);
+    font-weight: bold;
+    text-decoration: none;
+}
